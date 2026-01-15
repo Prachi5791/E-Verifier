@@ -1,0 +1,234 @@
+/* ===== NAVBAR COMPONENT STYLES ===== */
+.navbar {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  backdrop-filter: blur(8px);
+  transition: all var(--transition-fast);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+}
+
+.navbar-brand {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.navbar-brand:hover {
+  color: var(--primary-hover);
+  text-decoration: none;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex: 1;
+  justify-content: center;
+}
+
+.navbar-nav-item {
+  position: relative;
+}
+
+.navbar-link {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-link:hover {
+  color: var(--primary);
+  background-color: var(--primary-light);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.navbar-link:active {
+  transform: translateY(0);
+}
+
+.navbar-link.active {
+  color: var(--primary);
+  background-color: var(--primary-light);
+  font-weight: 600;
+}
+
+.navbar-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+.navbar-divider {
+  width: 1px;
+  height: 20px;
+  background-color: var(--border-medium);
+  margin: 0 var(--spacing-xs);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.navbar-user-role {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.navbar-logout {
+  background-color: transparent;
+  border: 1px solid var(--border-medium);
+  color: var(--text-secondary);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.navbar-logout:hover {
+  background-color: var(--error);
+  border-color: var(--error);
+  color: var(--text-white);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar-logout:active {
+  transform: translateY(0);
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .navbar-container {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: stretch;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .navbar-link {
+    width: 100%;
+    justify-content: center;
+    padding: var(--spacing-md);
+  }
+
+  .navbar-divider {
+    display: none;
+  }
+
+  .navbar-actions {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .navbar-user {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-nav {
+    gap: var(--spacing-xs);
+  }
+
+  .navbar-link {
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-sm);
+  }
+
+  .navbar-logout {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ===== ROLE-SPECIFIC STYLING ===== */
+.navbar[data-role="admin"] .navbar-user-role {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--error);
+}
+
+.navbar[data-role="verifier"] .navbar-user-role {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--warning);
+}
+
+.navbar[data-role="uploader"] .navbar-user-role {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+}
+
+/* ===== HOVER EFFECTS ===== */
+.navbar-nav-item:hover .navbar-divider {
+  background-color: var(--primary);
+}
+
+/* ===== ACCESSIBILITY ===== */
+.navbar-link:focus,
+.navbar-logout:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ===== LOADING STATE ===== */
+.navbar.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}

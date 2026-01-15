@@ -1,0 +1,6 @@
+import { keccak256, toUtf8Bytes } from "ethers";
+
+export const VERIFIER_ROLE = keccak256(toUtf8Bytes("VERIFIER_ROLE"));
+
+export const ADMIN_ROLE =
+  "0x0000000000000000000000000000000000000000000000000000000000000000";
