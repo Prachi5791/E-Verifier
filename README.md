@@ -14,7 +14,7 @@ DocVerfy is a full-stack application designed to streamline document verificatio
 - **Role-Based Access Control**: Three user roles (Uploader, Verifier, Admin) with distinct capabilities
 - **Blockchain Integration**: Smart contracts ensure document authenticity and immutability
 - **QR Code Support**: Generate and scan QR codes for easy document verification
-- **NFT Storage**: Integration with NFT.storage for decentralized storage
+- **IPFS Storage**: Integration with decentralized storage
 - **Email Notifications**: Automated email alerts for verification requests and status updates
 
 ## 📋 System Architecture
