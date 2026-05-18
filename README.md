@@ -2,6 +2,10 @@
 
 A comprehensive document verification platform that leverages blockchain technology, IPFS, and role-based access control to provide secure, transparent, and tamper-proof document verification and management.
 
+# Developer
+Prachi Maruti Patil
+Student · Developer · Vidyalankar Institute of Technology, Mumbai
+
 ## 🎯 Project Overview
 
 DocVerfy is a full-stack application designed to streamline document verification processes by:
