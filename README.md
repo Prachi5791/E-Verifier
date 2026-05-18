@@ -2,7 +2,7 @@
 
 A comprehensive document verification platform that leverages blockchain technology, IPFS, and role-based access control to provide secure, transparent, and tamper-proof document verification and management.
 
-# Developer
+## Developer
 Prachi Maruti Patil
 Student · Developer · Vidyalankar Institute of Technology, Mumbai
 
